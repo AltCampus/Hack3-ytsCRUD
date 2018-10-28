@@ -64,10 +64,13 @@ a:visited {
 
 .heading__top {
   position: sticky;
+  top: 0;
+  z-index: 2;
   display: flex;
   justify-content: space-around;
   padding: 15px ;
   background: #1d1d1d;
+  align-items: center;
 }
 
 .heading__top img {  
@@ -76,12 +79,14 @@ a:visited {
 
 
 .header__navbar {    
-  min-width: 600px;
+  width: 200px;
+  height: 20px;
 }
 
 .nav__links {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+  
 }
 
 ul li a {
@@ -97,17 +102,13 @@ ul li a:hover {
 
 ul li {
   flex: 1;
-}
-
-.nav__links li:nth-child(3) {
-  flex: 1.5;
-}
+} 
 
 input[type="search"] {
   background-color: transparent;
   border: none;
   font-weight: bold;
-  max-width: 250px;  
+  width: 100%;  
   color: #919191;
 }
 
@@ -116,6 +117,7 @@ input:focus {
 }
 
 .nav__search {  
+  width: 400px;
   display: flex;
   border: 2px solid rgb(54, 54, 54);
   padding: 6px;
