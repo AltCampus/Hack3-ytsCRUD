@@ -86,17 +86,17 @@ a {
   align-items: center;
 }
 
-.nav__links li a {
+ul li a {
   color: #919191;
   font-weight: bold;  
   font-size: 0.85em;
 }
 
-.nav__links li a:hover {
+ul li a:hover {
   color: #fff;
 }
 
-.nav__links li {
+ul li {
   flex: 1;
 }
 
@@ -142,4 +142,37 @@ i {
 }
 
 
+/* Card  */
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 /* Primary Footer */
+
+.foot {  
+  background: #1d1d1d;
+
+}
+
+.foot__grid {
+  margin: 0px auto;
+  padding: 40px 0;
+  max-width: 600px;
+  display: grid;  
+  grid-template-columns: repeat(auto-fit, auto);
+  place-items: center center;
+  grid-auto-flow: column;
+  
+}
+
+.foot-grid li a {
+  margin: 0 5px;
+}
+
+
+.foot ul li span {
+  color: #fff;      
+}
+
