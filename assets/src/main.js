@@ -2,6 +2,7 @@ var allMoviesList = [];
 var watchList = [];
 var movieContainer = document.querySelector(".movie-container ul")
 var url = "https://yts.am/api/v2/list_movies.json";
+var watchListData = document.querySelector(".hilight");
 
 	
 var  moviesContainer = document.querySelector(".movies__container ul");
@@ -13,12 +14,12 @@ function fetchData() {
   fetch(url)
     .then(res => res.json())
     .then(data => allMoviesList.push(...data.data.movies))
-    .then(showData);
+    .then(data => showData(allMoviesList));
 }
 fetchData();
 
-function showData() {
-  moviesContainer.innerHTML = allMoviesList.map((v,i) => {
+function showData(movies) {
+  moviesContainer.innerHTML = movies.map((v,i) => {
     return `<li class="movie-wrapper" data-id=${i}>
       <img class="movie_cover" src = "${v.medium_cover_image}">
       <h3 class="movie-name">${v.title_english}</h3>
@@ -30,21 +31,22 @@ function showData() {
 }
 
 
-//  function addWatchList(e) {
-//  	if(e.target.className !== 'fa-plus-circle') return;
- 	
-//  }
-// movieContainer.addEventListener("click" addWatchList);
+ function addWatchList(e) {
+ 	if(!e.target.classList.contains('fa-plus-circle')) return;
+ 	var id = e.target.dataset.id;
+ 	watchList.push(allMoviesList[id]);
+ }
+
 
 function search(e) {
   let searchText = e.target.value.toLowerCase();
   var newArray = allMoviesList.filter(v => v.title_english.toLowerCase().includes(searchText));
   showData(newArray);
 }
-
-function checking(e){
-  console.log(e);
+function showWatchList(e) {
+	showData(watchList);
 }
 
 searchMovies.addEventListener("keyup", search);
-moviesContainer.addEventListener("click", checking)
+moviesContainer.addEventListener("click", addWatchList);
+watchListData.addEventListener("click", showWatchList);
