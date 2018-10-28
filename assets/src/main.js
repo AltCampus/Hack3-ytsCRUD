@@ -5,6 +5,8 @@ var url = "https://yts.am/api/v2/list_movies.json";
 
 	
 var  moviesContainer = document.querySelector(".movies__container ul");
+var searchMovies = document.querySelector("[name=site-search]")
+
 var url = "https://yts.am/api/v2/list_movies.json";
 
 function fetchData() {
@@ -27,8 +29,22 @@ function showData() {
   }).join('');      
 }
 
+
 //  function addWatchList(e) {
 //  	if(e.target.className !== 'fa-plus-circle') return;
  	
 //  }
 // movieContainer.addEventListener("click" addWatchList);
+
+function search(e) {
+  let searchText = e.target.value.toLowerCase();
+  var newArray = allMoviesList.filter(v => v.title_english.toLowerCase().includes(searchText));
+  showData(newArray);
+}
+
+function checking(e){
+  console.log(e);
+}
+
+searchMovies.addEventListener("keyup", search);
+moviesContainer.addEventListener("click", checking)
