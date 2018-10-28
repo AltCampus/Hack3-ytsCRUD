@@ -13,12 +13,12 @@ function fetchData() {
   fetch(url)
     .then(res => res.json())
     .then(data => allMoviesList.push(...data.data.movies))
-    .then(showData);
+    .then(data => showData(allMoviesList));
 }
 fetchData();
 
-function showData() {
-  moviesContainer.innerHTML = allMoviesList.map((v,i) => {
+function showData(movies) {
+  moviesContainer.innerHTML = movies.map((v,i) => {
     return `<li class="movie-wrapper" data-id=${i}>
       <img class="movie_cover" src = "${v.medium_cover_image}">
       <h3 class="movie-name">${v.title_english}</h3>
@@ -30,11 +30,7 @@ function showData() {
 }
 
 
-//  function addWatchList(e) {
-//  	if(e.target.className !== 'fa-plus-circle') return;
- 	
-//  }
-// movieContainer.addEventListener("click" addWatchList);
+
 
 function search(e) {
   let searchText = e.target.value.toLowerCase();
