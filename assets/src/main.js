@@ -2,6 +2,7 @@ var allMoviesList = [];
 var watchList = [];
 var movieContainer = document.querySelector(".movie-container ul")
 var url = "https://yts.am/api/v2/list_movies.json";
+var watchListData = document.querySelector(".hilight");
 
 	
 var  moviesContainer = document.querySelector(".movies__container ul");
@@ -30,6 +31,14 @@ function showData(movies) {
 }
 
 
+<<<<<<< HEAD
+=======
+ function addWatchList(e) {
+ 	if(!e.target.classList.contains('fa-plus-circle')) return;
+ 	var id = e.target.dataset.id;
+ 	watchList.push(allMoviesList[id]);
+ }
+>>>>>>> f478d37f3476901e196de69ba687552689d532fd
 
 
 function search(e) {
@@ -37,10 +46,10 @@ function search(e) {
   var newArray = allMoviesList.filter(v => v.title_english.toLowerCase().includes(searchText));
   showData(newArray);
 }
-
-function checking(e){
-  console.log(e);
+function showWatchList(e) {
+	showData(watchList);
 }
 
 searchMovies.addEventListener("keyup", search);
-moviesContainer.addEventListener("click", checking)
+moviesContainer.addEventListener("click", addWatchList);
+watchListData.addEventListener("click", showWatchList);
