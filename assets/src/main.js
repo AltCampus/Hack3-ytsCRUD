@@ -21,12 +21,21 @@ fetchData(url);
 function showData(movies) {
   moviesContainer.innerHTML = movies.map((v,i) => {
     return `<li class="movie-wrapper" data-id=${i}>
-      <img class="movie_cover" src = "${v.medium_cover_image}">
-      <h3 class="movie-name">${v.title_english}</h3>
-      <span class="movie-rating">${v.rating}</span>
-      <span class="release-year">${v.year}</span>
-      <i class="fas fa-plus-circle" data-id=${i}></i>
-      <a href="https://www.youtube.com/watch?v=${v.yt_trailer_code}">Watch trailer</a>
+      <div class=movie_cover>
+        <img  src = "${v.medium_cover_image}">
+      </div>
+      <div class="data-wrap">
+        <h3 class="movie-name">${v.title_english}</h3>
+        <span class="release-year">${v.year}</span>
+      </div>  
+      <a class="movie-trailer" target="_blank" href="https://www.youtube.com/watch?v=${v.yt_trailer_code}">Watch trailer</a>
+      <div class="data-wrap">
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <span class="movie-rating">${v.rating}/10</span>
+        </div>
+        <i class="fas fa-plus-circle fa-2x" data-tooltip="Add to Wishlist" data-id=${i}></i>
+      </div>
     </li>`
   }).join('');      
 }
