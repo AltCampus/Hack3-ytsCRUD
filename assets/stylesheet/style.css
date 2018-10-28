@@ -165,10 +165,37 @@ main {
   border-radius: 5px;
 }
 
+.data-wrap {
+  display: flex;
+  justify-content: space-between;  
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
 .movie-name {
+  display: inline-block;
   color: #fff;
   font-weight: 600;
   font-size: 0.8em;
+}
+
+.release-year {
+  color: #919191;
+}
+
+.movie-rating {  
+  color: #fff;
+  font-weight: 900;
+  align-self: flex-end;
+}
+
+.fa-plus-circle {
+  color: #fff;
+  align-self: flex-end;
+  cursor: pointer;  
+}
+
+.fa-star {
+  color: gold;
 }
 
 
