@@ -1,5 +1,5 @@
 var allMoviesList = [];
-var watchList = [];
+var watchList = JSON.parse(localStorage.getItem("watchListItem")) || [];
 var movieContainer = document.querySelector(".movie-container ul")
 var url = "https://yts.am/api/v2/list_movies.json";
 var watchListData = document.querySelector(".hilight");
@@ -44,7 +44,8 @@ function showData(movies) {
  function addWatchList(e) {
  	if(!e.target.classList.contains('fa-plus-circle')) return;
  	var id = e.target.dataset.id;
- 	watchList.push(allMoviesList[id]);
+   watchList.push(allMoviesList[id]);
+   localStorage.setItem("watchListItem", JSON.stringify(watchList));
  }
 
 
