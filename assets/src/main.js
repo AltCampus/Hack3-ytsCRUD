@@ -10,13 +10,13 @@ var searchMovies = document.querySelector("[name=site-search]")
 
 var url = "https://yts.am/api/v2/list_movies.json";
 
-function fetchData() {
+function fetchData(url) {
   fetch(url)
     .then(res => res.json())
     .then(data => allMoviesList.push(...data.data.movies))
     .then(data => showData(allMoviesList));
 }
-fetchData();
+fetchData(url);
 
 function showData(movies) {
   moviesContainer.innerHTML = movies.map((v,i) => {
@@ -35,17 +35,30 @@ function showData(movies) {
  function addWatchList(e) {
  	if(!e.target.classList.contains('fa-plus-circle')) return;
  	var id = e.target.dataset.id;
- 	watchList.push(allMoviesList[id]);
+ 	var movieId = allMoviesList[id].id;
+	watchList.push(movieId);
  }
 
 
 function search(e) {
+	console.log('called')
   let searchText = e.target.value.toLowerCase();
-  var newArray = allMoviesList.filter(v => v.title_english.toLowerCase().includes(searchText));
-  showData(newArray);
+  fetch(url + '?query_term=' + searchText)
+  .then(res => res.json())
+  .then(d => showData(d.data.movies))
+  // var newArray = allMoviesList.filter(v => v.title_english.toLowerCase().includes(searchText));
+  // showData(newArray);
 }
 function showWatchList(e) {
-	showData(watchList);
+	var favMovieArray = [];
+
+	watchList.forEach(d =>
+		fetch(`https://yts.am/api/v2/movie_details.json?movie_id=${d}`)
+			.then(res => res.json())
+			.then(movie => {
+				favMovieArray.push(movie.data.movie);
+				showData(favMovieArray)
+			}))
 }
 
 searchMovies.addEventListener("keyup", search);
