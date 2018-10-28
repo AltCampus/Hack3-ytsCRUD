@@ -1,6 +1,7 @@
 var allMoviesList = [];
 var  moviesContainer = document.querySelector(".movies__container ul");
 var searchMovies = document.querySelector("[name=site-search]")
+
 var url = "https://yts.am/api/v2/list_movies.json";
 
 function fetchData() {
@@ -29,5 +30,9 @@ function search(e) {
   showData(newArray);
 }
 
+function checking(e){
+  console.log(e);
+}
 
 searchMovies.addEventListener("keyup", search);
+moviesContainer.addEventListener("click", checking)
