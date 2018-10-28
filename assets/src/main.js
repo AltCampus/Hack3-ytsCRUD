@@ -16,16 +16,19 @@ function fetchData() {
 fetchData();
 
 function showData() {
-  moviesContainer.innerHTML = allMoviesList.map(v => {
-    return `<li>
-      <img src = "${v.medium_cover_image}">
-      <h3>${v.title_english}</h3>
-      <span>${v.rating}</span>
-      <span>${v.year}</span>
-      <i class="fas fa-plus-circle"></i>
+  moviesContainer.innerHTML = allMoviesList.map((v,i) => {
+    return `<li class="movie-wrapper" data-id=${i}>
+      <img class="movie_cover" src = "${v.medium_cover_image}">
+      <h3 class="movie-name">${v.title_english}</h3>
+      <span class="movie-rating">${v.rating}</span>
+      <span class="release-year">${v.year}</span>
+      <i class="fas fa-plus-circle" data-id=${i}></i>
     </li>`
   }).join('');      
 }
 
-
-movieContainer.addEventListener("click" addWatchList);
+//  function addWatchList(e) {
+//  	if(e.target.className !== 'fa-plus-circle') return;
+ 	
+//  }
+// movieContainer.addEventListener("click" addWatchList);
