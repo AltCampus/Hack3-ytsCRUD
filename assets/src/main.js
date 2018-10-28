@@ -31,14 +31,11 @@ function showData(movies) {
 }
 
 
-<<<<<<< HEAD
-=======
  function addWatchList(e) {
  	if(!e.target.classList.contains('fa-plus-circle')) return;
  	var id = e.target.dataset.id;
  	watchList.push(allMoviesList[id]);
  }
->>>>>>> f478d37f3476901e196de69ba687552689d532fd
 
 
 function search(e) {
