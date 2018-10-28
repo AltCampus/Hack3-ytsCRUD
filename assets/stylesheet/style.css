@@ -92,6 +92,7 @@ ul li a {
 
 ul li a:hover {
   color: #fff;
+  transition: all 0.4s ease-in-out;
 }
 
 ul li {
@@ -133,6 +134,7 @@ input:focus {
 
 .hilight:hover {
   color: #919191;
+  transition: all 0.4s ease-in-out;
 }
 
 i {
@@ -163,6 +165,16 @@ main {
   border: 5px solid #fff; 
   margin-bottom: 5px;
   border-radius: 5px;
+  overflow: hidden;
+}
+
+.movie_cover img {
+  transform: scale(1);
+}
+
+.movie_cover img:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
 }
 
 .data-wrap {
@@ -175,7 +187,14 @@ main {
   display: inline-block;
   color: #fff;
   font-weight: 600;
-  font-size: 0.8em;
+  font-size: 0.8em;  
+  margin-bottom: 5px;
+}
+
+.movie-trailer {
+  border: 1px solid #919191;
+  border-radius: 4px;
+  padding: 5px 10px;  
 }
 
 .release-year {
@@ -192,11 +211,24 @@ main {
   color: #fff;
   align-self: flex-end;
   cursor: pointer;  
+  transform: scale(1);
+  /* transition: all 1ss ease-in-out; */
+}
+
+.fa-plus-circle:active {
+  color: green;
+}
+
+.fa-plus-circle:hover {
+  transform: scale(1.1);
+  transition: transform 0.1s ease-in-out; 
 }
 
 .fa-star {
   color: gold;
 }
+
+/* Tooltip */
 
 
 
