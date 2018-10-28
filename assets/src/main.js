@@ -26,6 +26,7 @@ function showData(movies) {
       <span class="movie-rating">${v.rating}</span>
       <span class="release-year">${v.year}</span>
       <i class="fas fa-plus-circle" data-id=${i}></i>
+      <a href="https://www.youtube.com/watch?v=${v.yt_trailer_code}">Watch trailer</a>
     </li>`
   }).join('');      
 }
