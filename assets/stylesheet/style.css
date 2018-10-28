@@ -1,0 +1,146 @@
+/* CSS Reset */
+
+:root {
+  font-size: 16px;
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+  line-height: 1;
+  font-weight: 'Arimo',Arial,Helvetica,"Lucida Grande",sans-serif;
+  background: #333
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+a:link, 
+a:visited {
+  text-decoration: none;
+}
+
+a {
+  font-family: 'Arimo', sans-serif ;
+}
+
+/* Primary Header */
+
+.heading__top {
+  position: sticky;
+  display: flex;
+  justify-content: space-around;
+  padding: 15px ;
+  background: #1d1d1d;
+}
+
+.heading__top img {  
+  height: 40px;  
+}
+
+
+.header__navbar {    
+  min-width: 600px;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+}
+
+.nav__links li a {
+  color: #919191;
+  font-weight: bold;  
+  font-size: 0.85em;
+}
+
+.nav__links li a:hover {
+  color: #fff;
+}
+
+.nav__links li {
+  flex: 1;
+}
+
+.nav__links li:nth-child(3) {
+  flex: 1.5;
+}
+
+input[type="search"] {
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  max-width: 250px;  
+  color: #919191;
+}
+
+input:focus {
+  outline: none;
+}
+
+.nav__search {  
+  display: flex;
+  border: 2px solid rgb(54, 54, 54);
+  padding: 6px;
+  border-radius: 20px;
+  margin-right: 15px; 
+  
+}
+
+.fa-search {
+  color: #919191;
+}
+
+.hilight {
+  color: #fff;
+}
+
+.hilight:hover {
+  color: #919191;
+}
+
+i {
+  padding: 5px;
+}
+
+
+/* Primary Footer */
+
