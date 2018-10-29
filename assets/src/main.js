@@ -49,7 +49,9 @@ function showData(movies) {
   localStorage.setItem("watchListItem", JSON.stringify(watchList));
 
  	var movieId = allMoviesList[id].id;
-	watchList.push(movieId);
+ 	if(watchList.includes(movieId)) return;
+ 	watchList.push(movieId);
+	localStorage.setItem("watchListItem", JSON.stringify(watchList))
  }
 
 
