@@ -3,6 +3,7 @@ var watchList = JSON.parse(localStorage.getItem("watchListItem")) || [];
 var movieContainer = document.querySelector(".movie-container ul")
 var url = "https://yts.am/api/v2/list_movies.json";
 var watchListData = document.querySelector(".hilight");
+// var delBtn = document.querySelector(".del-btn");
 
 	
 var  moviesContainer = document.querySelector(".movies__container ul");
@@ -34,15 +35,18 @@ function showData(movies) {
           <i class="fas fa-star"></i>
           <span class="movie-rating">${v.rating}/10</span>
         </div>
-        <i class="fas fa-plus-circle fa-2x" data-tooltip="Add to Wishlist" data-id=${i}></i>
+        <i class="fas fa-plus-circle fa-2x" id="add-btn" data-tooltip="Add to Wishlist" data-id=${i}></i>
       </div>
     </li>`
   }).join('');      
 }
 
-
+// <i class="far fa-times-circle del-btn"></i>
  function addWatchList(e) {
- 	if(!e.target.classList.contains('fa-plus-circle')) return;
+   if(!e.target.classList.contains('fa-plus-circle')) return;
+   var addBtn = document.getElementById("add-btn");
+   addBtn.classList.remove("fas fa-plus-circle");
+   addBtn.classList.add("far fa-times-circle");
    var id = e.target.dataset.id;
    
   // watchList.push(allMoviesList[id]);

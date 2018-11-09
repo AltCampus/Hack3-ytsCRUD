@@ -164,6 +164,7 @@ main {
 }
 
 .movie_cover {
+  width: 100%;
   border: 5px solid #fff; 
   margin-bottom: 5px;
   border-radius: 5px;
@@ -179,7 +180,7 @@ main {
   transition: transform 0.3s ease-in-out;
 }
 
-.data-wrap {
+.data-wrap {  
   display: flex;
   justify-content: space-between;  
   align-items: flex-end;
@@ -187,6 +188,7 @@ main {
 }
 .movie-name {
   display: inline-block;
+  width: 80%;
   color: #fff;
   font-weight: 600;
   font-size: 0.8em;  
@@ -200,7 +202,7 @@ main {
 }
 
 .release-year {
-  color: #919191;
+  color: #919191;  
 }
 
 .movie-rating {  
@@ -259,5 +261,8 @@ main {
 
 .foot ul li span {
   color: #fff;      
+}
+.del-btn {
+  color: white;
 }
 
